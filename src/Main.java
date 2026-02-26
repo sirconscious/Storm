@@ -5,10 +5,10 @@ public class Main{
 
             WorldListReader reader = new WorldListReader("common.txt");
             reader.read();
-            reader.splitToChunks(3);
+            reader.splitToChunks(10);
 
             for (int i = 0; i < reader.chunks.size(); i++) {
-                FuzzerThread t = new FuzzerThread( reader.chunks.get(i), "https://www.w3schools.com");
+                FuzzerThread t = new FuzzerThread( reader.chunks.get(i), "https://twinfragrance.shop");
                 t.start();
             }
 //    RequestSender sender = new RequestSender();
