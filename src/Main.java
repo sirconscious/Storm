@@ -2,9 +2,9 @@ public class Main {
     // ══════════════════════════════════════════════
     //              STORM CONFIGURATION
     // ══════════════════════════════════════════════
-    static String target             = "https://student.emsi.ma";
-    static String wordlist           = "../common.txt";
-    static String subdomainsWordlist = "../subdomains.txt";
+    static String target             = "https://41.111.144.117";
+    static String wordlist           = "common.txt";
+    static String subdomainsWordlist = "subdomains.txt";
     static int    threads            = 50;
 
     // ── Toggle scans on/off ────────────────────────
