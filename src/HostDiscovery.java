@@ -33,11 +33,11 @@ public class HostDiscovery {
     };
 
     // ─── Shared state ──────────────────────────────────────────────────────────
-    private static final Map<String, List<Integer>> aliveHosts =
+    static final Map<String, List<Integer>> aliveHosts =
             Collections.synchronizedMap(new LinkedHashMap<>());
 
-    private static final AtomicInteger scannedCount = new AtomicInteger(0);
-    private static int totalHosts = 0;
+    static final AtomicInteger scannedCount = new AtomicInteger(0);
+    static int totalHosts = 0;
 
     // ─── DiscoveryThread ───────────────────────────────────────────────────────
 
@@ -161,7 +161,7 @@ public class HostDiscovery {
     }
 
     /** Detect format and return the full IP list */
-    private static List<String> resolveTargets(String target) throws Exception {
+    static List<String> resolveTargets(String target) throws Exception {
         if (target.contains("/"))  return parseCidr(target);
         if (target.contains("-"))  return parseRange(target);
         return Collections.singletonList(target); // single IP
@@ -169,7 +169,7 @@ public class HostDiscovery {
 
     // ─── Thread builder — split IP list evenly across threads ──────────────────
 
-    private static List<DiscoveryThread> buildThreads(
+    static List<DiscoveryThread> buildThreads(
             List<String> ips, int numThreads, int timeoutMs) {
 
         int actual         = Math.min(numThreads, ips.size());
@@ -214,7 +214,7 @@ public class HostDiscovery {
         }
     }
 
-    private static void printResults(String target, long elapsedMs) {
+    static void printResults(String target, long elapsedMs) {
         System.out.println("\n");
         System.out.println("╔══════════════════════════════════════════════════════════════╗");
         System.out.printf ("║  Host Discovery Results — %-36s║%n", target);

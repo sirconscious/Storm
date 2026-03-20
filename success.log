@@ -26,3 +26,14 @@
 [21:52:37] DirThread-14 | http://41.111.132.12/css --> 301
 [21:52:37] DirThread-23 | http://41.111.132.12/img --> 301
 [21:52:38] DirThread-11 | http://41.111.132.12/cgi-bin/ --> 403
+[21:17:32] DirThread-1 | https://sberdiltek.com/.bash_history --> 200
+[21:17:32] DirThread-24 | https://sberdiltek.com/index.html --> 200
+[21:17:32] DirThread-24 | https://sberdiltek.com/index.php --> 200
+[21:17:32] DirThread-1 | https://sberdiltek.com/.bashrc --> 200
+[21:17:34] DirThread-12 | https://sberdiltek.com/checkout --> 302
+[21:17:34] DirThread-11 | https://sberdiltek.com/cart --> 200
+[21:17:35] DirThread-6 | https://sberdiltek.com/admin --> 301
+[21:17:36] DirThread-6 | https://sberdiltek.com/admin.cgi --> 301
+[21:17:37] DirThread-6 | https://sberdiltek.com/admin.php --> 301
+[21:17:37] DirThread-6 | https://sberdiltek.com/admin.pl --> 301
+[21:17:51] SubThread-1 | https://www.sberdiltek.com --> 301

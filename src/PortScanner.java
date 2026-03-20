@@ -18,14 +18,14 @@ public class PortScanner {
     // ─── Shared state across all scanner threads ───────────────────────────────
 
     /** Collects results: port → banner (or empty string) */
-    private static final Map<Integer, String> results =
+    static final Map<Integer, String> results =
             Collections.synchronizedMap(new TreeMap<>());
 
     /** Tracks how many ports have been scanned so far (for progress bar) */
-    private static final AtomicInteger scannedCount = new AtomicInteger(0);
+    static final AtomicInteger scannedCount = new AtomicInteger(0);
 
     /** Total ports being scanned — set once before threads start */
-    private static int totalPorts = 0;
+    static int totalPorts = 0;
 
     // ─── ScannerThread ─────────────────────────────────────────────────────────
 
@@ -126,7 +126,7 @@ public class PortScanner {
      * Divides [startPort, endPort] into (up to) numThreads contiguous slices
      * and returns one ScannerThread per slice.
      */
-    private static List<ScannerThread> buildThreads(
+    static List<ScannerThread> buildThreads(
             String host, int startPort, int endPort,
             int numThreads, int timeoutMs) {
 
@@ -153,7 +153,7 @@ public class PortScanner {
 
     // ─── Results printer ──────────────────────────────────────────────────────
 
-    private static void printResults(String host, long elapsedMs) {
+    static void printResults(String host, long elapsedMs) {
         System.out.println(); // end progress-bar line
         System.out.println();
         System.out.println("╔══════════════════════════════════════════════════════════╗");
