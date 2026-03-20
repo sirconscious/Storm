@@ -177,7 +177,7 @@ public class ServiceFingerprinter {
         // ── FTP ────────────────────────────────────────────────────────────────
         // FTP servers speak first with a 220 greeting
         // Format: "220 ProFTPD 1.3.5 Server (hostname) [ip]"
-        private void probeFTP(String host, int port, FingerprintResult r) {
+            private void probeFTP(String host, int port, FingerprintResult r) {
             r.serviceName = "FTP";
             String banner = readBanner(host, port, null);
             if (banner == null) return;
